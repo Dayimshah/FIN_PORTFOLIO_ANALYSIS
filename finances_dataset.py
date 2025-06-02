@@ -7,7 +7,6 @@ tickers = ['AAPL', 'MSFT', 'GOOGL', 'TSLA']
 
 data = yf.download(tickers, start='2020-01-01', end='2024-12-31')
 
-# Use 'Close' instead of 'Adj Close'
 adj_close = data.loc[:, ('Close', slice(None))]
 adj_close.columns = adj_close.columns.droplevel(0)  # Now columns are tickers only
 
